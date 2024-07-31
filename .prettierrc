@@ -1,0 +1,7 @@
+{
+  "useTabs": false,
+  "semi": true,
+  "singleAttributePerLine": true,
+  "trailingComma": "none",
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
