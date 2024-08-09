@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +8,7 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+    --foreground-alt: #52667a;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
@@ -29,6 +32,14 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+
+    --dark-blue: #004990;
+    --dark-blue-faded: #3c74aa;
+    --skyblue: #15b6e5;
+    --skyblue-faded: #4bc0e5;
+    --pink: #fd68a3;
+    --pink-faded: #ed8ab7;
+    --price-green: #5d8677;
   }
 
   .dark {
@@ -62,6 +73,7 @@
 @layer base {
   * {
     @apply border-border;
+    font-family: "Manrope", sans-serif;
   }
   body {
     @apply bg-background text-foreground;

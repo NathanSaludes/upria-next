@@ -1,0 +1,19 @@
+[
+  { "value": "caloocan", "label": "Caloocan" },
+  { "value": "las-piñas", "label": "Las Piñas" },
+  { "value": "makati", "label": "Makati" },
+  { "value": "malabon", "label": "Malabon" },
+  { "value": "mandaluyong", "label": "Mandaluyong" },
+  { "value": "manila", "label": "Manila" },
+  { "value": "marikina", "label": "Marikina" },
+  { "value": "muntinlupa", "label": "Muntinlupa" },
+  { "value": "navotas", "label": "Navotas" },
+  { "value": "parañaque", "label": "Parañaque" },
+  { "value": "pasay", "label": "Pasay" },
+  { "value": "pasig", "label": "Pasig" },
+  { "value": "pateros", "label": "Pateros" },
+  { "value": "quezon-city", "label": "Quezon City" },
+  { "value": "san-juan", "label": "San Juan" },
+  { "value": "taguig", "label": "Taguig" },
+  { "value": "valenzuela", "label": "Valenzuela" }
+]

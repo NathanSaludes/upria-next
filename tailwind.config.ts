@@ -2,12 +2,13 @@ import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 const config = {
-  darkMode: ["class"],
+  darkMode: ["class", "[data-mode='dark']"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}"
+    "./src/**/*.{ts,tsx}",
+    "./.storybook/**/*.{ts,tsx}"
   ],
   prefix: "",
   theme: {
@@ -24,7 +25,7 @@ const config = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        foreground: "var(--foreground-alt)",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))"
@@ -52,7 +53,20 @@ const config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))"
-        }
+        },
+        "dark-blue": {
+          DEFAULT: "var(--dark-blue)",
+          faded: "var(--dark-blue-faded)"
+        },
+        skyblue: {
+          DEFAULT: "var(--skyblue)",
+          faded: "var(--skyblue-faded)"
+        },
+        pink: {
+          DEFAULT: "var(--pink)",
+          faded: "var(--pink-faded)"
+        },
+        "price-green": "var(--price-green)"
       },
       borderRadius: {
         lg: "var(--radius)",
