@@ -1,13 +1,7 @@
+import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
 
 import "./globals.css";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-sans"
-});
 
 export const metadata: Metadata = {
   title: "Upria v2",
@@ -20,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable}`}>
+    <html lang="en" className={`${GeistSans.variable}`}>
       <body className="min-h-screen bg-background font-sans subpixel-antialiased">
         {children}
       </body>

@@ -28,8 +28,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { ChevronsUpDown, Search, X } from "lucide-react";
 import { useForm } from "react-hook-form";
 import {
+  PropertyTenure,
   PropertyTenureEnum,
-  PropertyTypes,
   PropertyTypesEnum
 } from "@/lib/schemas";
 
@@ -70,9 +70,9 @@ export const SearchBar = () => {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectLabel>Mode</SelectLabel>
+                  <SelectLabel>Tenureship</SelectLabel>
                   {/* {PropertyTenure.options.map((value) => <SelectItem value="buy" key={value}>Buy</SelectItem>)} */}
-                  {PropertyTypes.map((value) => (
+                  {PropertyTenure.map((value) => (
                     <SelectItem value={value} key={value}>
                       {value}
                     </SelectItem>
@@ -170,7 +170,7 @@ export const SearchBar = () => {
 
         {/* Submit Button - Search */}
         <Button type="submit" className="rounded-lg">
-          <div className="flex items-center gap-2 font-medium">
+          <div className="flex items-center gap-2">
             <Search size={16} />
             Search
           </div>

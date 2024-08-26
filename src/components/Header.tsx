@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { User } from "lucide-react";
 import Image from "next/image";
@@ -24,7 +26,7 @@ const CustomButtonLink = React.forwardRef<
     ref={ref}
     className={cn(
       buttonVariants({ variant, size }),
-      "min-w-20 rounded-lg text-sm font-medium",
+      "min-w-20 rounded-lg text-sm",
       className
     )}
   >
@@ -42,7 +44,7 @@ const CustomMenuLink = React.forwardRef<
     {...props}
     ref={ref}
     className={cn(
-      "inline-block w-full rounded p-2 px-3 text-sm font-medium text-foreground transition-colors duration-200 hover:bg-accent hover:text-accent-foreground",
+      "inline-block w-full rounded p-2 px-3 text-sm text-foreground transition-colors duration-200 hover:bg-accent hover:text-accent-foreground",
       className
     )}
   >
@@ -65,7 +67,7 @@ type Props = {
 
 export const Header: React.FunctionComponent<Props> = () => {
   return (
-    <header className="relative flex justify-center font-sans subpixel-antialiased">
+    <header className="container relative flex justify-center font-sans">
       <div className="container fixed z-50 flex justify-between rounded-b-2xl border border-t-0 bg-white px-4 py-4 shadow-sm">
         <Link
           href="/"
