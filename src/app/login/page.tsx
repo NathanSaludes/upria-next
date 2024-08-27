@@ -1,7 +1,6 @@
 import { LoginForm } from "@/components/Forms/LoginForm";
 import { Button, buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
-
 import { Separator } from "@/components/ui/separator";
 import AppleIcon from "@public/icon_apple.svg";
 import FacebookIcon from "@public/icon_facebook.svg";
@@ -14,9 +13,9 @@ type Props = {
    icon: string;
    iconAltText: string;
    size?: number;
-   children: React.ReactNode;
+   text?: string;
 };
-const SocialLoginButton = ({ icon, iconAltText, size, children }: Props) => (
+const SocialLoginButton = ({ icon, iconAltText, size, text }: Props) => (
    <Button
       className="min-h-11 rounded-md font-medium text-slate-500"
       variant="outline"
@@ -28,7 +27,7 @@ const SocialLoginButton = ({ icon, iconAltText, size, children }: Props) => (
          height={size || 18}
          className={`mr-2 h-[${size}px] w-[${size}px]`}
       />
-      {children}
+      {text}
    </Button>
 );
 
@@ -39,17 +38,17 @@ export default function Login() {
             <div className="container flex min-h-[800px] max-w-[1366px] gap-4 rounded-3xl bg-white p-4 shadow-lg">
                {/* Hero Image */}
                <div className="flex flex-[1.4] flex-col overflow-hidden rounded-xl bg-[url('/sample-property.jpg')] bg-cover bg-no-repeat">
-                  <p className="m-9 mb-auto block text-lg font-medium text-white">
+                  <p className="m-9 mb-auto block text-lg font-medium tracking-tight text-white">
                      &lt;insert logo&gt;
                   </p>
                   {/* Customer Testimonial */}
                   <div className="mt-auto flex h-full flex-col justify-end space-y-3 bg-gradient-to-t from-black/50 from-30% to-transparent p-9">
-                     <p className="text-lg font-medium leading-8 text-white">
+                     <p className="text-lg font-medium leading-8 tracking-tight text-white">
                         “It transformed my overwhelming first-time homebuying
                         experience into an enjoyable and stress-free journey,
                         helping me find my dream home in just a few weeks!”
                      </p>
-                     <p className="text-sm font-medium text-white">
+                     <p className="text-sm text-white/80">
                         Tim Henson, Proud Homeowner
                      </p>
                   </div>
@@ -67,10 +66,10 @@ export default function Login() {
                   </Link>
                   <div className="space-y-8">
                      <div className="space-y-2">
-                        <h1 className="text-3xl font-black tracking-tighter text-primary">
+                        <h1 className="font-sans-manrope text-3xl font-black tracking-tighter text-primary">
                            Welcome back!
                         </h1>
-                        <p className="font-medium text-slate-400">
+                        <p className="tracking-tight text-slate-400">
                            Start managing your properties and make better deals
                         </p>
                      </div>
@@ -79,21 +78,18 @@ export default function Login() {
                            <SocialLoginButton
                               icon={GoogleIcon}
                               iconAltText="Sign in with Google"
-                           >
-                              Sign In with Google
-                           </SocialLoginButton>
+                              text="Sign In with Google"
+                           />
                            <SocialLoginButton
                               icon={AppleIcon}
                               iconAltText="Sign In with Apple ID"
-                           >
-                              Sign In with Apple ID
-                           </SocialLoginButton>
+                              text="Sign In with Apple ID"
+                           />
                            <SocialLoginButton
                               icon={FacebookIcon}
                               iconAltText="Sign In with Facebook"
-                           >
-                              Sign In with Facebook
-                           </SocialLoginButton>
+                              text="Sign In with Facebook"
+                           />
                         </div>
                         <div className="flex items-center gap-6 text-xs font-semibold text-slate-300">
                            <Separator className="flex-1" />
