@@ -3,5 +3,7 @@
   "semi": true,
   "singleAttributePerLine": false,
   "trailingComma": "none",
+  "tabWidth": 3,
+  "arrowParens": "always",
   "plugins": ["prettier-plugin-tailwindcss"]
 }

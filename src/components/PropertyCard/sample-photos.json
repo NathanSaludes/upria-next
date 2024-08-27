@@ -1,37 +1,37 @@
 [
-  {
-    "image_url": "/sample/sample-living-room.webp",
-    "description": "Living Room",
-    "id": "1"
-  },
-  {
-    "image_url": "/sample/sample-dining-area.webp",
-    "description": "Dining Area",
-    "id": "2"
-  },
-  {
-    "image_url": "/sample/sample-bedroom.webp",
-    "description": "Bedroom 1",
-    "id": "3"
-  },
-  {
-    "image_url": "/sample/sample-bedroom-2.webp",
-    "description": "Bedroom 2",
-    "id": "4"
-  },
-  {
-    "image_url": "/sample/sample-full-bathroom-1.webp",
-    "description": "Bathroom",
-    "id": "5"
-  },
-  {
-    "image_url": "/sample/sample-balcony-2.webp",
-    "description": "Balcony",
-    "id": "6"
-  },
-  {
-    "image_url": "/sample/sample-exterior-2.webp",
-    "description": "Exterior",
-    "id": "7"
-  }
+   {
+      "image_url": "/sample/sample-living-room.webp",
+      "description": "Living Room",
+      "id": "1"
+   },
+   {
+      "image_url": "/sample/sample-dining-area.webp",
+      "description": "Dining Area",
+      "id": "2"
+   },
+   {
+      "image_url": "/sample/sample-bedroom.webp",
+      "description": "Bedroom 1",
+      "id": "3"
+   },
+   {
+      "image_url": "/sample/sample-bedroom-2.webp",
+      "description": "Bedroom 2",
+      "id": "4"
+   },
+   {
+      "image_url": "/sample/sample-full-bathroom-1.webp",
+      "description": "Bathroom",
+      "id": "5"
+   },
+   {
+      "image_url": "/sample/sample-balcony-2.webp",
+      "description": "Balcony",
+      "id": "6"
+   },
+   {
+      "image_url": "/sample/sample-exterior-2.webp",
+      "description": "Exterior",
+      "id": "7"
+   }
 ]
