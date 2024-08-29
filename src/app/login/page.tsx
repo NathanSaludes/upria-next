@@ -1,35 +1,13 @@
 import { LoginForm } from "@/components/Forms/LoginForm";
-import { Button, buttonVariants } from "@/components/ui/button";
-import Image from "next/image";
+import { SingleSignOnButton } from "@/components/SingleSignOnButton";
+import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 import AppleIcon from "@public/icon_apple.svg";
 import FacebookIcon from "@public/icon_facebook.svg";
 import GoogleIcon from "@public/icon_google.svg";
-import Link from "next/link";
 import { X } from "lucide-react";
-import { cn } from "@/lib/utils";
-
-type Props = {
-   icon: string;
-   iconAltText: string;
-   size?: number;
-   text?: string;
-};
-const SocialLoginButton = ({ icon, iconAltText, size, text }: Props) => (
-   <Button
-      className="min-h-11 rounded-md font-medium text-slate-500"
-      variant="outline"
-   >
-      <Image
-         src={icon}
-         alt={iconAltText}
-         width={size || 18}
-         height={size || 18}
-         className={`mr-2 h-[${size}px] w-[${size}px]`}
-      />
-      {text}
-   </Button>
-);
+import Link from "next/link";
 
 export default function Login() {
    return (
@@ -75,17 +53,17 @@ export default function Login() {
                      </div>
                      <div className="space-y-6">
                         <div className="flex flex-col gap-2">
-                           <SocialLoginButton
+                           <SingleSignOnButton
                               icon={GoogleIcon}
                               iconAltText="Sign in with Google"
                               text="Sign In with Google"
                            />
-                           <SocialLoginButton
+                           <SingleSignOnButton
                               icon={AppleIcon}
                               iconAltText="Sign In with Apple ID"
                               text="Sign In with Apple ID"
                            />
-                           <SocialLoginButton
+                           <SingleSignOnButton
                               icon={FacebookIcon}
                               iconAltText="Sign In with Facebook"
                               text="Sign In with Facebook"

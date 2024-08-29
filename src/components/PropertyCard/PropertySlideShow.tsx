@@ -1,20 +1,20 @@
 "use client";
 
-import { PropertyPhotos } from "@/lib/interfaces";
+import { IPropertyPhotos } from "@/lib/interfaces";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useCallback } from "react";
 
 interface Props {
-   photos?: PropertyPhotos[];
+   photos?: IPropertyPhotos[];
 }
 
 export const PropertySlideShow: React.FunctionComponent<Props> = (props) => {
    const { photos } = props;
    const hasItems = photos && (photos.length > 0 ? true : false);
    const [emblaRef, emblaApi] = useEmblaCarousel({
-      loop: true
+      loop: true,
    });
 
    const scrollPrev = useCallback(() => {
@@ -55,7 +55,7 @@ export const PropertySlideShow: React.FunctionComponent<Props> = (props) => {
             )}
          </div>
          {hasItems && (
-            <div className="debug absolute bottom-0 top-0 flex w-full justify-between opacity-0 outline-black transition-opacity duration-150 group-hover/root:opacity-100">
+            <div className="debug absolute bottom-0 top-0 flex w-full justify-between opacity-0 transition-opacity duration-150 hover:cursor-grab active:cursor-grabbing group-hover/root:opacity-100">
                <div
                   className="group ml-1.5 flex min-h-full items-center hover:cursor-pointer"
                   onClick={hasItems ? scrollPrev : () => {}}

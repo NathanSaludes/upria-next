@@ -16,7 +16,7 @@ export default function HomePage() {
             <section className="relative bg-[#E5F2FF] pt-32">
                <div className="mx-auto flex max-w-[820px] gap-[60px]">
                   <div className="space-y-8">
-                     <h1 className="font-sans-manrope -mb-2 text-4xl font-black leading-[140%] tracking-tighter text-primary">
+                     <h1 className="-mb-2 font-sans-manrope text-4xl font-black leading-[140%] tracking-tighter text-primary">
                         Home to Manila&apos;s best deals for house and lots,
                         condo units, and apartments.
                      </h1>
@@ -43,6 +43,7 @@ export default function HomePage() {
                   <SearchBar />
                </div>
             </section>
+
             {/* Latest Property Listings Section */}
             <section className="py-20">
                <div className="container space-y-4">

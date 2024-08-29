@@ -12,13 +12,13 @@ import { Alert, AlertDescription } from "../ui/alert";
 
 const formSchema = z.object({
    email: z.string(),
-   password: z.string()
+   password: z.string(),
 });
 
 export const LoginForm = () => {
    const form = useForm<z.infer<typeof formSchema>>({
       resolver: zodResolver(formSchema),
-      defaultValues: {}
+      defaultValues: {},
    });
    return (
       <Form {...form}>

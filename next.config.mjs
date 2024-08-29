@@ -4,13 +4,13 @@ const nextConfig = {
       remotePatterns: [
          {
             protocol: "https",
-            hostname: "**"
+            hostname: "**",
          },
          {
-            hostname: "gs://upria-bucket-test/"
-         }
-      ]
-   }
+            hostname: "gs://upria-bucket-test/",
+         },
+      ],
+   },
 };
 
 export default nextConfig;

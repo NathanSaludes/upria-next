@@ -1,9 +1,9 @@
 {
-  "useTabs": false,
-  "semi": true,
-  "singleAttributePerLine": false,
-  "trailingComma": "none",
-  "tabWidth": 3,
-  "arrowParens": "always",
-  "plugins": ["prettier-plugin-tailwindcss"]
+   "useTabs": false,
+   "semi": true,
+   "singleAttributePerLine": false,
+   "trailingComma": "es5",
+   "tabWidth": 3,
+   "arrowParens": "always",
+   "plugins": ["prettier-plugin-tailwindcss"]
 }

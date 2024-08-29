@@ -61,7 +61,7 @@ export default function Component_PropertyCard() {
             </ol>
          </ComponentDefinition.Description>
          <ComponentDefinition.Preview>
-            <div className="flex min-h-[400px] items-center justify-center">
+            <div className="flex min-h-[400px] items-center justify-center p-2">
                <div className="max-w-[300px]">
                   <PropertyCard
                      title="Mountain View Home in Tagaytay"

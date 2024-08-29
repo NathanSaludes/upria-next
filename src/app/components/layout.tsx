@@ -3,7 +3,7 @@ import { ComponentsPageHeader } from "./Header";
 import { Sidebar } from "./Sidebar";
 
 export default function ComponentsLayout({
-   children
+   children,
 }: {
    children: ReactNode;
 }) {

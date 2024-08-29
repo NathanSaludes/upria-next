@@ -19,6 +19,7 @@ export const ComponentsPageHeader = () => {
          <div>
             <Link
                href="https://github.com/Sence1-inc/upria-frontend"
+               target="_blank"
                className={buttonVariants()}
             >
                <BiLogoGithub size={18} className="mr-1" />

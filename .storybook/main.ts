@@ -9,14 +9,14 @@ const config: StorybookConfig = {
       "@chromatic-com/storybook",
       "@storybook/addon-interactions",
       "@storybook/addon-themes",
-      "@storybook/addon-styling-webpack"
+      "@storybook/addon-styling-webpack",
    ],
    framework: {
       name: "@storybook/nextjs",
       options: {
-         nextConfigPath: "../next.config.mjs"
-      }
+         nextConfigPath: "../next.config.mjs",
+      },
    },
-   staticDirs: ["..\\public"]
+   staticDirs: ["..\\public"],
 };
 export default config;

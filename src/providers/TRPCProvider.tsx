@@ -12,7 +12,7 @@ export function TRPCProvider({ children }: { children?: ReactNode }) {
       trpc.createClient({
          links: [
             httpBatchLink({
-               url: "http://localhost:3000/trpc"
+               url: "http://localhost:3000/trpc",
 
                // You can pass any HTTP headers you wish here
                // async headers() {
@@ -20,8 +20,8 @@ export function TRPCProvider({ children }: { children?: ReactNode }) {
                // 		authorization: getAuthCookie()
                // 	}
                // }
-            })
-         ]
+            }),
+         ],
       })
    );
 

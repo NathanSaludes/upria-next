@@ -1,3 +1,8 @@
+import {
+   ResizableHandle,
+   ResizablePanel,
+   ResizablePanelGroup,
+} from "@/components/ui/resizable";
 import { PropsWithChildren } from "react";
 
 const ComponentRoot: React.FC<PropsWithChildren> = ({ children }) => {
@@ -17,7 +22,15 @@ const ComponentDescription: React.FC<PropsWithChildren> = ({ children }) => {
 };
 
 const ComponentPreview: React.FC<PropsWithChildren> = ({ children }) => {
-   return <div className="rounded-lg border p-4">{children}</div>;
+   return (
+      <div className="rounded-lg border">
+         <ResizablePanelGroup direction="horizontal">
+            <ResizablePanel defaultSize={99}>{children}</ResizablePanel>
+            <ResizableHandle withHandle />
+            <ResizablePanel defaultSize={0}></ResizablePanel>
+         </ResizablePanelGroup>
+      </div>
+   );
 };
 
 // React Display Names
@@ -30,5 +43,5 @@ export const ComponentDefinition = {
    Root: ComponentRoot,
    Title: ComponentTitle,
    Description: ComponentDescription,
-   Preview: ComponentPreview
+   Preview: ComponentPreview,
 };

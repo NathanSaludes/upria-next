@@ -4,7 +4,7 @@ import { Meta, StoryObj } from "@storybook/react";
 const meta = {
    title: "UPRIA Header",
    component: Header,
-   parameters: {}
+   parameters: {},
 } satisfies Meta<typeof Header>;
 
 export default meta;

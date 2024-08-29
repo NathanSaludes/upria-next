@@ -1,0 +1,40 @@
+[Property]
+- id															(int, auto-generated, auto-increment)
+- listing_price											(decimal, precision: 2)
+- property_type											(string)	<!-- house, condominium, apartment -->
+- property_sub_type										(string)
+- sale_status												(enum, ['for-sale','pending-sale','sold',], optional)
+- rent_status												(enum, ['for-rent','pending-rent','rented'], optional)
+- property_features										([PropertyFeature][]) <!-- unique features of the property -->
+- property_name											(string)
+- property_description									(string)
+- lot_size													(decimal, precision: 2)	<!-- sqm unit -->
+- year_built												(date)
+- number_of_stories										(int)	<!-- number of floors witthin the unit -->
+- number_of_bedrooms										(int)
+- number_of_bathrooms									(int)
+- garage_capacity											(int, optional)
+- parking													(int, optional)
+- agent														([Account])
+- amenities													(string[])	<!-- accessible establishments near the property -->
+- virtual_tour_link										(string, url)
+- photos														([Media][])
+- floor_plan_link											(string, url)
+- geolocation_longitude									(decimal, precision: 2)
+- geolocation_latitude									(decimal, precision: 2)
+- street_number											(string)
+- street_name												(string)
+- street_type												(string)
+- unit_number												(string)
+- lot_number												(string)
+- city														(string)
+- state														(string)
+- province													(string)
+- zip_code													(string)
+- country													(string)
+- publish_date												(datetime, optional)
+
+[PropertyFeature]
+- id															(int, auto-generated, auto-increment)
+- label														(string)
+- description												(string)

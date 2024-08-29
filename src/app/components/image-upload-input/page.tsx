@@ -1,6 +1,7 @@
+import { ImageUploadInput } from "@/components/ImageUploadInput/ImageUploadInput";
 import { ComponentDefinition } from "../ComponentDefinition";
 
-export default function Component_ImageUpload() {
+export default function Component_ImageUploadInput() {
    return (
       <ComponentDefinition.Root>
          <ComponentDefinition.Title>Image Upload</ComponentDefinition.Title>
@@ -10,9 +11,11 @@ export default function Component_ImageUpload() {
             maiores assumenda.
          </ComponentDefinition.Description>
          <ComponentDefinition.Preview>
-            {/* <Form>
-          <form onSubmit={}></form>
-        </Form> */}
+            <div className="flex justify-center">
+               <div className="basis-[750px] p-2 py-8">
+                  <ImageUploadInput />
+               </div>
+            </div>
          </ComponentDefinition.Preview>
       </ComponentDefinition.Root>
    );

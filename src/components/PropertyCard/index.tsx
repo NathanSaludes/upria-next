@@ -3,10 +3,10 @@ import { FunctionComponent, Suspense } from "react";
 import { PropertySlideShow } from "./PropertySlideShow";
 
 import Link from "next/link";
-import { PropertyPhotos } from "@/lib/interfaces";
+import { IPropertyPhotos } from "@/lib/interfaces";
 
 type Props = {
-   photos: PropertyPhotos[];
+   photos: IPropertyPhotos[];
    title: string;
    location: string;
    price: string | number;

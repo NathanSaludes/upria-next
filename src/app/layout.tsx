@@ -4,11 +4,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
    title: "Upria v2",
-   description: "Upria version 2 by Nathaniel Saludes"
+   description: "Upria version 2 by Nathaniel Saludes",
 };
 
 export default function RootLayout({
-   children
+   children,
 }: Readonly<{
    children: React.ReactNode;
 }>) {

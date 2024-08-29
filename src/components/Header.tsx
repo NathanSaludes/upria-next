@@ -12,7 +12,7 @@ import {
    NavigationMenuItem,
    NavigationMenuLink,
    NavigationMenuList,
-   NavigationMenuTrigger
+   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
 
 // Sub-components

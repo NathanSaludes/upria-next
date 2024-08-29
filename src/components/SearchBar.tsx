@@ -8,7 +8,7 @@ import {
    CommandGroup,
    CommandInput,
    CommandItem,
-   CommandList
+   CommandList,
 } from "./ui/command";
 import { Form, FormField } from "./ui/form";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
@@ -19,7 +19,7 @@ import {
    SelectItem,
    SelectLabel,
    SelectTrigger,
-   SelectValue
+   SelectValue,
 } from "./ui/select";
 
 import locations from "@/lib/locations.json";
@@ -30,13 +30,13 @@ import { useForm } from "react-hook-form";
 import {
    PropertyTenure,
    PropertyTenureEnum,
-   PropertyTypesEnum
+   PropertyTypesEnum,
 } from "@/lib/schemas";
 
 const formSchema = z.object({
    property_tenure: PropertyTenureEnum.optional(),
    property_type: PropertyTypesEnum.optional(),
-   location: z.string().optional()
+   location: z.string().optional(),
 });
 
 export const SearchBar = () => {
@@ -45,8 +45,8 @@ export const SearchBar = () => {
       defaultValues: {
          property_tenure: undefined,
          property_type: undefined,
-         location: undefined
-      }
+         location: undefined,
+      },
    });
 
    const onSubmit = (values: z.infer<typeof formSchema>) => {

@@ -1,10 +1,16 @@
+"use client";
+
 import { ScrollArea } from "@/components/ui/scroll-area";
-import Link from "next/link";
-import { components } from "./components.map";
-import { Suspense } from "react";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Suspense } from "react";
+import { components } from "./components.map";
+import { cn } from "@/lib/utils";
 
 export const Sidebar = () => {
+   const path = usePathname();
+
    return (
       <Suspense fallback={"Loading..."}>
          <aside>
@@ -22,8 +28,8 @@ export const Sidebar = () => {
                </div>
                <Separator />
                {components.map((category) => (
-                  <>
-                     <div key={category.id} className="my-4 space-y-1">
+                  <div key={category.id}>
+                     <div className="my-4 space-y-1">
                         <p className="text-md font-semibold text-slate-800">
                            {category.label}
                         </p>
@@ -31,32 +37,21 @@ export const Sidebar = () => {
                            <Link
                               href={component.route}
                               key={component.id}
-                              className="block hover:underline hover:underline-offset-2"
+                              className={cn(
+                                 "block hover:underline hover:underline-offset-2",
+                                 {
+                                    "font-medium text-slate-800":
+                                       path === component.route,
+                                 }
+                              )}
                            >
                               {component.label}
                            </Link>
                         ))}
                      </div>
                      <Separator />
-                  </>
+                  </div>
                ))}
-               {/* {Array.from({ length: 5 }).map((item, index) => (
-            <>
-              <div key={index} className="my-4 space-y-1">
-                <p className="text-md font-semibold text-slate-800">Category</p>
-                {Array.from({ length: 5 }).map((component, index) => (
-                  <Link
-                    href={"#"}
-                    key={index}
-                    className="block hover:underline hover:underline-offset-2"
-                  >
-                    &lt;Component Name&gt;
-                  </Link>
-                ))}
-              </div>
-              <Separator />
-            </>
-          ))} */}
             </ScrollArea>
          </aside>
       </Suspense>

@@ -5,7 +5,7 @@ import { Form } from "../ui/form";
 
 export const SignUpForm = () => {
    const form = useForm({
-      defaultValues: {}
+      defaultValues: {},
    });
    return (
       <Form {...form}>
