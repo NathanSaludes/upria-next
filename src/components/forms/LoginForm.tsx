@@ -1,14 +1,14 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ArrowRight, Info, X } from "lucide-react";
 import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { Alert, AlertDescription } from "../ui/alert";
+import { Button } from "../ui/button";
 import { Form, FormField } from "../ui/form";
 import { Input } from "../ui/input";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { Button } from "../ui/button";
-import { ArrowRight, Info, X } from "lucide-react";
 import { Label } from "../ui/label";
-import { Alert, AlertDescription } from "../ui/alert";
 
 const formSchema = z.object({
    email: z.string(),
@@ -25,11 +25,11 @@ export const LoginForm = () => {
          <form className="space-y-3">
             <Alert
                variant="destructive"
-               className="flex min-h-12 items-center justify-between rounded-md bg-red-100 py-0"
+               className="flex min-h-12 items-center justify-between gap-4 rounded-md bg-red-100 py-0"
             >
-               <div className="flex items-center justify-center gap-4">
-                  <Info size={14} />
-                  <AlertDescription className="text-center">
+               <div className="flex items-center justify-center gap-4 p-2">
+                  <Info size={14} className="flex-shrink-0" />
+                  <AlertDescription className="text-left">
                      Invalid email or password, please try again.
                   </AlertDescription>
                </div>
@@ -68,7 +68,7 @@ export const LoginForm = () => {
                         {...field}
                         type="password"
                         autoComplete="current-password webauthn"
-                        className="min-h-11 placeholder:text-slate-400"
+                        className="min-h-11 text-lg tracking-widest placeholder:text-slate-400"
                         placeholder="••••••••••"
                      />
                   </div>

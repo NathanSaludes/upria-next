@@ -55,21 +55,21 @@ export const PropertySlideShow: React.FunctionComponent<Props> = (props) => {
             )}
          </div>
          {hasItems && (
-            <div className="debug absolute bottom-0 top-0 flex w-full justify-between opacity-0 transition-opacity duration-150 hover:cursor-grab active:cursor-grabbing group-hover/root:opacity-100">
-               <div
-                  className="group ml-1.5 flex min-h-full items-center hover:cursor-pointer"
-                  onClick={hasItems ? scrollPrev : () => {}}
-               >
-                  <button className="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 transition duration-200 group-hover:shadow-md">
-                     <ChevronLeft size={14} className="text-slate-400" />
+            <div className="absolute bottom-0 top-0 flex w-full justify-between opacity-0 transition-opacity duration-150 hover:cursor-grab active:cursor-grabbing group-hover/root:opacity-100">
+               <div className="group ml-1.5 flex min-h-full flex-col items-center justify-evenly">
+                  <button
+                     className="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 transition duration-200 active:scale-75 group-hover:shadow-md"
+                     onClick={hasItems ? scrollPrev : () => {}}
+                  >
+                     <ChevronLeft size={16} className="text-slate-400" />
                   </button>
                </div>
-               <div
-                  className="group mr-1.5 flex min-h-full items-center hover:cursor-pointer"
-                  onClick={hasItems ? scrollNext : () => {}}
-               >
-                  <button className="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 transition duration-200 group-hover:shadow-md">
-                     <ChevronRight size={14} className="text-slate-400" />
+               <div className="group mr-1.5 flex min-h-full flex-col items-center justify-evenly">
+                  <button
+                     className="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 transition duration-200 active:scale-75 group-hover:shadow-md"
+                     onClick={hasItems ? scrollNext : () => {}}
+                  >
+                     <ChevronRight size={16} className="text-slate-400" />
                   </button>
                </div>
             </div>

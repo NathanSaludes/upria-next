@@ -1,1 +1,5 @@
-export type PropertyType = "house_&_lot" | "apartment" | "condominium";
+export type TUser = {
+   uuid: string;
+   firstName: string;
+   lastName: string;
+};

@@ -10,7 +10,7 @@ import samplePhotos from "@/components/PropertyCard/sample-photos.json";
 export default function HomePage() {
    return (
       <>
-         <Header user={null} />
+         <Header />
          <main>
             {/* Hero Section */}
             <section className="relative bg-[#E5F2FF] pt-32">
@@ -50,7 +50,7 @@ export default function HomePage() {
                   <h2 className="text-foreground-alt text-2xl tracking-tight">
                      Recent Property Listings
                   </h2>
-                  <div className="grid grid-cols-5 gap-x-4 gap-y-6">
+                  <div className="grid grid-cols-4 gap-x-4 gap-y-6">
                      {Array.from({ length: 15 }).map((_, index) => (
                         <PropertyCard
                            title="Modern Two-Story Home with Sleek Design"

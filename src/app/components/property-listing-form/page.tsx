@@ -1,5 +1,5 @@
+import ComponentDefinition from "@/components/ComponentDefinition";
 import { PropertyListingForm } from "@/components/Forms/PropertyListingForm";
-import { ComponentDefinition } from "../ComponentDefinition";
 
 export default function Component_PropertyListingForm() {
    return (

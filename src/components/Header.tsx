@@ -14,6 +14,7 @@ import {
    NavigationMenuList,
    NavigationMenuTrigger,
 } from "./ui/navigation-menu";
+import { TUser } from "@/lib/types";
 
 // Sub-components
 const CustomButtonLink = React.forwardRef<
@@ -34,8 +35,6 @@ const CustomButtonLink = React.forwardRef<
    </Link>
 ));
 
-CustomButtonLink.displayName = "CustomButtonLink";
-
 const CustomMenuLink = React.forwardRef<
    React.ElementRef<typeof Link>,
    React.ComponentPropsWithoutRef<typeof Link>
@@ -52,18 +51,14 @@ const CustomMenuLink = React.forwardRef<
    </Link>
 ));
 
+// Display Names
+CustomButtonLink.displayName = "CustomButtonLink";
 CustomMenuLink.displayName = "CustomMenuLink";
 
-type User = {
-   uuid: string;
-   firstName: string;
-   lastName: string;
-};
-
 // Main component
-type Props = {
-   user?: User | null;
-};
+interface Props {
+   user?: TUser;
+}
 
 export const Header: React.FunctionComponent<Props> = () => {
    return (
@@ -85,7 +80,7 @@ export const Header: React.FunctionComponent<Props> = () => {
                <NavigationMenuList>
                   <NavigationMenuItem>
                      <NavigationMenuTrigger>
-                        Buy Real Estate
+                        Buy Properties
                      </NavigationMenuTrigger>
                      <NavigationMenuContent>
                         <ul className="flex min-w-[200px] flex-col p-3 pb-2.5">
@@ -99,21 +94,14 @@ export const Header: React.FunctionComponent<Props> = () => {
                            <li>
                               <NavigationMenuLink asChild>
                                  <CustomMenuLink href="#">
-                                    Condominiums
+                                    Condominium Units
                                  </CustomMenuLink>
                               </NavigationMenuLink>
                            </li>
                            <li>
                               <NavigationMenuLink asChild>
                                  <CustomMenuLink href="#">
-                                    Apartments
-                                 </CustomMenuLink>
-                              </NavigationMenuLink>
-                           </li>
-                           <li>
-                              <NavigationMenuLink asChild>
-                                 <CustomMenuLink href="#">
-                                    Townhouses
+                                    Townhouse
                                  </CustomMenuLink>
                               </NavigationMenuLink>
                            </li>
@@ -129,7 +117,7 @@ export const Header: React.FunctionComponent<Props> = () => {
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                      <NavigationMenuTrigger>
-                        Rental Properties
+                        Lease Properties
                      </NavigationMenuTrigger>
                      <NavigationMenuContent></NavigationMenuContent>
                   </NavigationMenuItem>

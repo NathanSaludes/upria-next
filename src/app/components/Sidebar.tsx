@@ -11,6 +11,17 @@ import { cn } from "@/lib/utils";
 export const Sidebar = () => {
    const path = usePathname();
 
+   const getStatusIcon = (status) => {
+      switch (status) {
+         case "experimental":
+            return "🧪";
+         case "incomplete":
+            return "⚠️";
+         default:
+            return "";
+      }
+   };
+
    return (
       <Suspense fallback={"Loading..."}>
          <aside>
@@ -35,17 +46,30 @@ export const Sidebar = () => {
                         </p>
                         {category.components.map((component) => (
                            <Link
-                              href={component.route}
+                              href={
+                                 ["experimental", "stable"].includes(
+                                    component.status
+                                 )
+                                    ? component.route
+                                    : `/components/#${component.id}`
+                              }
                               key={component.id}
-                              className={cn(
-                                 "block hover:underline hover:underline-offset-2",
-                                 {
-                                    "font-medium text-slate-800":
-                                       path === component.route,
-                                 }
-                              )}
+                              className={cn("group block", {
+                                 "font-medium text-slate-800":
+                                    path === component.route,
+                              })}
                            >
-                              {component.label}
+                              <span
+                                 className={cn("mr-1", {
+                                    "group-hover:underline group-hover:underline-offset-2":
+                                       ["experimental", "stable"].includes(
+                                          component.status
+                                       ),
+                                 })}
+                              >
+                                 {component.label}
+                              </span>
+                              {`${getStatusIcon(component.status)}`}
                            </Link>
                         ))}
                      </div>

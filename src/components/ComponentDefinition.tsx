@@ -25,9 +25,9 @@ const ComponentPreview: React.FC<PropsWithChildren> = ({ children }) => {
    return (
       <div className="rounded-lg border">
          <ResizablePanelGroup direction="horizontal">
-            <ResizablePanel defaultSize={99}>{children}</ResizablePanel>
+            <ResizablePanel>{children}</ResizablePanel>
             <ResizableHandle withHandle />
-            <ResizablePanel defaultSize={0}></ResizablePanel>
+            <ResizablePanel defaultSize={1} minSize={1}></ResizablePanel>
          </ResizablePanelGroup>
       </div>
    );
@@ -39,9 +39,11 @@ ComponentTitle.displayName = "ComponentDefinition.Title";
 ComponentDescription.displayName = "ComponentDefinition.Description";
 ComponentPreview.displayName = "ComponentDefinition.Preview";
 
-export const ComponentDefinition = {
+const ComponentDefinition = {
    Root: ComponentRoot,
    Title: ComponentTitle,
    Description: ComponentDescription,
    Preview: ComponentPreview,
 };
+
+export default ComponentDefinition;

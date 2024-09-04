@@ -1,7 +1,7 @@
 // Sample Photos
-import samplePhotos from "@/components/PropertyCard/sample-photos.json";
-import { ComponentDefinition } from "../ComponentDefinition";
+import ComponentDefinition from "@/components/ComponentDefinition";
 import { PropertyCard } from "@/components/PropertyCard";
+import samplePhotos from "@/components/PropertyCard/sample-photos.json";
 
 export default function Component_PropertyCard() {
    return (

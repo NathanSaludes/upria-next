@@ -1,5 +1,11 @@
 "use client";
 
+import { PropertyTypeChoices, SearchCategoryChoices } from "@/lib/constants";
+import locations from "@/lib/locations.json";
+import { cn } from "@/lib/utils";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ChevronsUpDown, Search, X } from "lucide-react";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button, buttonVariants } from "./ui/button";
 import {
@@ -17,25 +23,13 @@ import {
    SelectContent,
    SelectGroup,
    SelectItem,
-   SelectLabel,
    SelectTrigger,
    SelectValue,
 } from "./ui/select";
 
-import locations from "@/lib/locations.json";
-import { cn } from "@/lib/utils";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { ChevronsUpDown, Search, X } from "lucide-react";
-import { useForm } from "react-hook-form";
-import {
-   PropertyTenure,
-   PropertyTenureEnum,
-   PropertyTypesEnum,
-} from "@/lib/schemas";
-
 const formSchema = z.object({
-   property_tenure: PropertyTenureEnum.optional(),
-   property_type: PropertyTypesEnum.optional(),
+   category: z.string().optional(),
+   property_type: z.string().optional(),
    location: z.string().optional(),
 });
 
@@ -43,7 +37,7 @@ export const SearchBar = () => {
    const form = useForm<z.infer<typeof formSchema>>({
       resolver: zodResolver(formSchema),
       defaultValues: {
-         property_tenure: undefined,
+         category: undefined,
          property_type: undefined,
          location: undefined,
       },
@@ -59,28 +53,24 @@ export const SearchBar = () => {
             onSubmit={form.handleSubmit(onSubmit)}
             className="flex w-full gap-4 rounded-2xl bg-white p-4 shadow"
          >
-            {/* Rent or Buy */}
+            {/* Buy or Lease */}
             <FormField
                control={form.control}
-               name="property_tenure"
+               name="category"
                render={({ field }) => (
                   <Select
                      onValueChange={field.onChange}
                      defaultValue={field.value}
                   >
-                     <SelectTrigger className="w-[150px]">
-                        <SelectValue placeholder="Rent or Buy" />
+                     <SelectTrigger className="w-[180px]">
+                        <SelectValue placeholder="Select category" />
                      </SelectTrigger>
                      <SelectContent>
-                        <SelectGroup>
-                           <SelectLabel>Tenureship</SelectLabel>
-                           {/* {PropertyTenure.options.map((value) => <SelectItem value="buy" key={value}>Buy</SelectItem>)} */}
-                           {PropertyTenure.map((value) => (
-                              <SelectItem value={value} key={value}>
-                                 {value}
-                              </SelectItem>
-                           ))}
-                        </SelectGroup>
+                        {SearchCategoryChoices.map((choice) => (
+                           <SelectItem key={choice.value} value={choice.value}>
+                              {choice.label}
+                           </SelectItem>
+                        ))}
                      </SelectContent>
                   </Select>
                )}
@@ -95,20 +85,15 @@ export const SearchBar = () => {
                      onValueChange={field.onChange}
                      defaultValue={field.value}
                   >
-                     <SelectTrigger className="w-[200px]">
+                     <SelectTrigger className="w-[180px]">
                         <SelectValue placeholder="Select property type" />
                      </SelectTrigger>
                      <SelectContent>
-                        <SelectGroup>
-                           <SelectLabel>Property Type</SelectLabel>
-                           <SelectItem value="house_&_lot">
-                              House & Lot
+                        {PropertyTypeChoices.map((choice) => (
+                           <SelectItem key={choice.value} value={choice.value}>
+                              {choice.label}
                            </SelectItem>
-                           <SelectItem value="apartment">Apartment</SelectItem>
-                           <SelectItem value="condominium">
-                              Condominium
-                           </SelectItem>
-                        </SelectGroup>
+                        ))}
                      </SelectContent>
                   </Select>
                )}
@@ -126,14 +111,12 @@ export const SearchBar = () => {
                               buttonVariants({ variant: "outline" }),
                               "flex-1 justify-between"
                            )}
-                           role="combobox"
-                           aria-expanded={true}
                         >
                            {field.value
                               ? locations.find(
                                    (location) => location.label === field.value
                                 )?.label
-                              : "Select a location"}
+                              : "Select location"}
                            <div className="flex items-center gap-1.5">
                               {field.value && (
                                  <Button
@@ -155,7 +138,7 @@ export const SearchBar = () => {
                            </div>
                         </div>
                      </PopoverTrigger>
-                     <PopoverContent className="w-[417px] overflow-hidden rounded-xl border-none p-0">
+                     <PopoverContent className="w-[398px] overflow-hidden rounded-xl border-none p-0">
                         <Command>
                            <CommandInput placeholder="Search location" />
                            <CommandList>

@@ -53,7 +53,7 @@ export const ImageUploadInput: React.FC<Props> = () => {
          if (currentPosition === 0) return;
 
          const updatedUploadPreviews = moveArrayItem<IUploadPreview>(
-            uploadPreviews,
+            [...uploadPreviews],
             currentPosition,
             currentPosition - 1
          );
@@ -72,7 +72,7 @@ export const ImageUploadInput: React.FC<Props> = () => {
          if (currentPosition === uploadPreviews.length - 1) return;
 
          const updatedUploadPreviews = moveArrayItem<IUploadPreview>(
-            uploadPreviews,
+            [...uploadPreviews],
             currentPosition,
             currentPosition + 1
          );

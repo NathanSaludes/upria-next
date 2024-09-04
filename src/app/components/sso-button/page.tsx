@@ -1,5 +1,5 @@
+import ComponentDefinition from "@/components/ComponentDefinition";
 import { SingleSignOnButton } from "@/components/SingleSignOnButton";
-import { ComponentDefinition } from "../ComponentDefinition";
 import GoogleIcon from "@public/icon_google.svg";
 
 export default function Component_SSOButton() {
