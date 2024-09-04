@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 export const Sidebar = () => {
    const path = usePathname();
 
-   const getStatusIcon = (status) => {
+   const getStatusIcon = (status: string) => {
       switch (status) {
          case "experimental":
             return "🧪";
