@@ -18,8 +18,7 @@
          }
       ],
       "paths": {
-         "@/*": ["./src/*"],
-         "@public/*": ["./public/*"]
+         "@/*": ["./src/*", "./public/*"]
       }
    },
    "include": [
