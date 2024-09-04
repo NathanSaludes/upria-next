@@ -2,7 +2,7 @@ import { Header } from "@/components/Header";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SearchBar } from "@/components/SearchBar";
 import { Button } from "@/components/ui/button";
-import HeroImage from "@public/hero-image-alt.jpg";
+import HeroImage from "@/images/hero-image-alt.jpg";
 import Image from "next/image";
 
 import samplePhotos from "@/components/PropertyCard/sample-photos.json";

@@ -2,21 +2,21 @@ import { LoginForm } from "@/components/Forms/LoginForm";
 import { SingleSignOnButton } from "@/components/SingleSignOnButton";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import AppleIcon from "@/images/icon_apple.svg";
+import FacebookIcon from "@/images/icon_facebook.svg";
+import GoogleIcon from "@/images/icon_google.svg";
 import { cn } from "@/lib/utils";
-import AppleIcon from "@public/icon_apple.svg";
-import FacebookIcon from "@public/icon_facebook.svg";
-import GoogleIcon from "@public/icon_google.svg";
 import { X } from "lucide-react";
 import Link from "next/link";
 
 export default function Login() {
    return (
       <>
-         <main className="h-dvh bg-[url('/hero-image.avif')] bg-cover bg-no-repeat pt-14">
+         <main className="h-dvh bg-[url('/images/hero-image.avif')] bg-cover bg-no-repeat pt-14">
             <div className="container grid min-h-[800px] max-w-[1366px] grid-cols-[1.6fr_1fr] gap-4 rounded-3xl bg-white p-4 shadow-lg">
                {/* Left Container */}
                <div className="flex rounded-xl">
-                  <div className="flex flex-col overflow-hidden rounded-xl bg-[url('/sample-property.jpg')] bg-cover bg-no-repeat">
+                  <div className="flex flex-col overflow-hidden rounded-xl bg-[url('/images/sample-property.jpg')] bg-cover bg-no-repeat">
                      <p className="m-9 mb-auto block text-lg font-medium tracking-tight text-white">
                         &lt;insert logo&gt;
                      </p>
